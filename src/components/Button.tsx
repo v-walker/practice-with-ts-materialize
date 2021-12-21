@@ -1,11 +1,15 @@
-import React from 'react'
+import React from 'react';
 
-function Button() {
+interface ButtonProps {
+    color?: string;
+    text: string;
+    action: () => void;
+}
+
+function Button({text, action, color}: ButtonProps) {
     return (
-        <div>
-            
-        </div>
+        <button className={`waves-effect waves-light btn ${color}`} onClick={action}>{text}</button>
     )
 }
 
-export default Button
+export default Button;
